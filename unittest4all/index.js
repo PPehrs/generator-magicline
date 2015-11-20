@@ -36,7 +36,23 @@ function generateTest(s, pathX){
     } else if(className.indexOf('_collection') > -1) {
     	classNameShort = className.replace('_collection', '');
     	menu = s.read("collectionUnitTest.js");
-    }
+    } else if(className.indexOf('_layout') > -1) {
+    	classNameShort = className.replace('_layout', '');
+    	menu = s.read("layoutUnitTest.js");
+    } else if(className.indexOf('_enum') > -1) {
+    	classNameShort = className.replace('_enum', '');
+    	menu = s.read("enumUnitTest.js");
+    } else if(className.indexOf('_action') > -1) {
+    	//basic
+    } else if(className.indexOf('_store') > -1) {
+    	//basic
+    } else {
+    	classNameShort = className;
+		fixedFileName += '_view';
+		className += '_view';
+    	menu = s.read("viewUnitTest.js");
+    	isView = true;		
+	}
 
 
     var className = className.replace('.', '_');

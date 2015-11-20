@@ -1,7 +1,10 @@
 define([
 	'/scripts/test/unit/helper/package_tester.js',
-	'<%= filename %>'],
-	function(PackageTester, <%= name %>) {
+	'<%= filename %>'
+], function(
+	PackageTester, 
+	<%= name %>
+){
 	'use strict';
 		describe('<%= name %>', function() {
 
@@ -14,5 +17,4 @@ define([
 				packageTester.test();
 			});
 		});
-	}
-);
+});
